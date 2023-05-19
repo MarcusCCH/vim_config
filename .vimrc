@@ -12,9 +12,13 @@ Plugin 'kana/vim-textobj-line'
 Plugin 'GCBallesteros/vim-textobj-hydrogen'
 Plugin 'GCBallesteros/jupytext.vim'
 
+Plugin 'sirver/ultisnips'
+Plugin 'dylanaraps/wal'
+Plugin 'scrooloose/nerdtree'
 "vimtex
 Plugin 'lervag/vimtex'
-Plugin 'sirver/ultisnips'
+Plugin 'matze/vim-tex-fold'
+
 call vundle#end()
 
 "7. Config vundle 
@@ -96,14 +100,17 @@ set number relativenumber
 
 set nu rnu
 colorscheme onedark
+
 " set guifont=FixedSys\ Excelsior\ 3.01:h16
 
 
 "4. latex ----------------------------------------------------------
-"let g:vimtex_view_method = 'zathura'
-" let g:vimtex_view_general_viewer = 'skim'
+let g:tex_flavor = 'latex'
+let g:Tex_DefaultTargetFormat='pdf'
+
+let g:vimtex_view_method = 'skim'
+let g:vimtex_compiler_method = 'latexmk'
 " let g:tex_flavor = 'latex'
-" let g:vimtex_compiler_method = 'latexmk'
 
 "----------------------------------------------------------------
 "5. Run files
@@ -118,3 +125,8 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+"7. Nerdtree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
