@@ -1,5 +1,5 @@
 "-------
-"6. Vundle
+set rtp+=/usr/local/opt/fzf
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -11,6 +11,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-line'
 Plugin 'GCBallesteros/vim-textobj-hydrogen'
 Plugin 'GCBallesteros/jupytext.vim'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 Plugin 'sirver/ultisnips'
 Plugin 'dylanaraps/wal'
@@ -36,7 +37,6 @@ let g:cpp_class_scope_highlight = 1
 filetype plugin indent on
 "Set X lines to the cursor when moving vertically
 set scrolloff=0
-
 set tabstop=2 softtabstop=2
 
 set shiftwidth=2
@@ -130,3 +130,4 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
